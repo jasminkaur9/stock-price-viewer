@@ -2,6 +2,8 @@
 
 A Streamlit-based interactive stock price viewer with cross-exchange arbitrage detection.
 
+**Live App:** [https://jasminkaur9-stock-price-viewer.streamlit.app](https://jasminkaur9-stock-price-viewer.streamlit.app)
+
 ## Quick Start
 
 ```bash
