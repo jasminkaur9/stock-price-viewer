@@ -13,20 +13,17 @@ Open http://localhost:8501 in your browser.
 
 ## Screenshots
 
-### Landing Page
-![Landing Page](../screenshots/01-landing.png)
-
-### Price Viewer — AAPL Candlestick Chart
-![AAPL Price Viewer](../screenshots/02-price-viewer-aapl.png)
+### Price Viewer — AAPL Candlestick Chart with Metrics
+![AAPL Price Viewer](screenshots/02-price-viewer-aapl.png)
 
 ### Moving Average Overlays (SMA 20/50)
-![SMA Overlays](../screenshots/03-with-sma.png)
+![SMA Overlays](screenshots/03-with-sma.png)
 
 ### Multi-Ticker Comparison
-![Multi-Ticker](../screenshots/04-multi-ticker.png)
+![Multi-Ticker](screenshots/04-multi-ticker.png)
 
 ### Arbitrage Finder — SHOP (NYSE) vs SHOP.TO (TSX)
-![Arbitrage Finder](../screenshots/05-arbitrage-shop.png)
+![Arbitrage Finder](screenshots/05-arbitrage-shop.png)
 
 ## Features
 
@@ -53,32 +50,15 @@ Open http://localhost:8501 in your browser.
 | Component | Library | Version |
 |-----------|---------|---------|
 | UI Framework | Streamlit | 1.54+ |
-| Data Source | yfinance | latest |
+| Data Source | yfinance | 1.1+ |
 | Charts | Plotly | 6.5+ |
 | Processing | pandas | 2.3+ |
 
-## Validated Pairs
+## Validated Arbitrage Pairs
 
 | Exchange 1 | Exchange 2 | Notes |
 |-----------|-----------|-------|
-| SHOP | SHOP.TO | US vs Canada (USD/CAD) — tight spread ~0.02% |
-| RIO | RIO.L | US vs London (USD/GBp) — requires sub-unit fix |
-| RELIANCE.NS | RELIANCE.BO | India NSE vs BSE (same currency) — near-zero spread |
-| TM | 7203.T | US ADR vs Tokyo (USD/JPY) |
-
-## Validation Results
-
-| Check | Status | Evidence |
-|-------|--------|---------|
-| Known Answers | PASS | OHLCV matches yfinance raw; SMA = manual mean; arbitrage math verified |
-| Reasonableness | PASS | Same-country spreads ~0%; cross-currency spreads <1% for liquid stocks |
-| Edge Cases | PASS | Invalid ticker, future dates, single day, weekends all handled |
-| AI Blind Spots | FIXED | GBp sub-unit currency bug caught and fixed during validation |
-
-## Future Directions
-
-- Intraday data support for real-time arbitrage monitoring
-- Transaction cost modeling (fees, FX spread) for realistic P&L
-- Alerts/notifications when spread exceeds threshold
-- Historical volatility and correlation analysis
-- Portfolio tracker with multi-position support
+| `SHOP` | `SHOP.TO` | US vs Canada (USD/CAD) — tight spread ~0.02% |
+| `RIO` | `RIO.L` | US vs London (USD/GBp) — sub-unit currency handled |
+| `RELIANCE.NS` | `RELIANCE.BO` | India NSE vs BSE (same currency) — near-zero spread |
+| `TM` | `7203.T` | US ADR vs Tokyo (USD/JPY) |
